@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
+import { projects } from "@/lib/constants";
 
 type Project = {
   id: number;
@@ -11,376 +12,9 @@ type Project = {
   thumbnail: string;
   media: string;
   isVideo?: boolean;
+  techStack?: string[];
+  projectLink?: string;
 };
-
-const projects: Project[] = [
-  {
-    id: 1,
-    name: "LDC",
-    role: "London Dermatology Clinic",
-    showcase: "Robots building Mars",
-    description:
-      "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
-    thumbnail: "./images/ldc.png",
-    media: "./images/ldc.png",
-  },
-  {
-    id: 2,
-    name: "DS",
-    role: "Dental Software",
-    showcase: "Futuristic City Concepts",
-    description:
-      "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
-    thumbnail: "./images/dental.png",
-    media:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Marshal",
-    role: "Logibook",
-    showcase: "Abstract Animations",
-    description:
-      "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
-    thumbnail: "./images/logibook.jpg",
-    media:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Hlj",
-    role: "HLJ ERP",
-    showcase: "Cyberpunk Portraits",
-    description:
-      "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
-    thumbnail: "./images/hlj_erp.png",
-    media:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-  },
-  {
-    id: 5,
-    name: "HS",
-    role: "Helpsales CRM",
-    showcase: "Fantasy Landscapes",
-    description:
-      "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
-    thumbnail: "./images/hs.png",
-    media:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-  },
-  {
-    id: 6,
-    name: "GM",
-    role: "Garments Mantra",
-    showcase: "Particle Simulations",
-    description:
-      "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
-    thumbnail: "./images/gm.png",
-    media:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
-  },
-  {
-    id: 7,
-    name: "TMS",
-    role: "The Mewa Shoppe",
-    showcase: "Brand Experiences",
-    description:
-      "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
-    thumbnail: "./images/tms_logos.png",
-    media:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
-  },
-  {
-    id: 8,
-    name: "AM",
-    role: "Asset Mantra",
-    showcase: "Interactive Worlds",
-    description:
-      "Building immersive game environments that blur the line between reality and digital artistry.",
-    thumbnail: "./images/assetmantra.png",
-    media:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-  },
-  {
-    id: 9,
-    name: "Déborah",
-    role: "AI Artist",
-    showcase: "Robots building Mars",
-    description:
-      "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=600&h=400&fit=crop",
-  },
-  {
-    id: 10,
-    name: "John Martinez",
-    role: "3D Designer",
-    showcase: "Futuristic City Concepts",
-    description:
-      "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-  },
-  {
-    id: 11,
-    name: "Sarah Chen",
-    role: "Motion Designer",
-    showcase: "Abstract Animations",
-    description:
-      "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  },
-  {
-    id: 12,
-    name: "Alex Rivera",
-    role: "Digital Artist",
-    showcase: "Cyberpunk Portraits",
-    description:
-      "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-  },
-  {
-    id: 13,
-    name: "Maya Patel",
-    role: "Concept Artist",
-    showcase: "Fantasy Landscapes",
-    description:
-      "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-  },
-  {
-    id: 14,
-    name: "David Kim",
-    role: "Visual Effects Artist",
-    showcase: "Particle Simulations",
-    description:
-      "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
-  },
-  {
-    id: 15,
-    name: "Luna Rodriguez",
-    role: "Creative Director",
-    showcase: "Brand Experiences",
-    description:
-      "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
-  },
-  {
-    id: 16,
-    name: "Marcus Thompson",
-    role: "Game Designer",
-    showcase: "Interactive Worlds",
-    description:
-      "Building immersive game environments that blur the line between reality and digital artistry.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-  },
-  {
-    id: 17,
-    name: "LDC",
-    role: "London Dermatology Clinic",
-    showcase: "Robots building Mars",
-    description:
-      "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
-    thumbnail: "./images/ldc.png",
-    media: "./images/ldc.png",
-  },
-  {
-    id: 18,
-    name: "DS",
-    role: "Dental Software",
-    showcase: "Futuristic City Concepts",
-    description:
-      "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
-    thumbnail: "./images/dental.png",
-    media:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-  },
-  {
-    id: 19,
-    name: "Marshal",
-    role: "Logibook",
-    showcase: "Abstract Animations",
-    description:
-      "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
-    thumbnail: "./images/logibook.jpg",
-    media:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  },
-  {
-    id: 20,
-    name: "Hlj",
-    role: "HLJ ERP",
-    showcase: "Cyberpunk Portraits",
-    description:
-      "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
-    thumbnail: "./images/hlj_erp.png",
-    media:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-  },
-  {
-    id: 21,
-    name: "HS",
-    role: "Helpsales CRM",
-    showcase: "Fantasy Landscapes",
-    description:
-      "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
-    thumbnail: "./images/hs.png",
-    media:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-  },
-  {
-    id: 22,
-    name: "GM",
-    role: "Garments Mantra",
-    showcase: "Particle Simulations",
-    description:
-      "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
-    thumbnail: "./images/gm.png",
-    media:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
-  },
-  {
-    id: 23,
-    name: "TMS",
-    role: "The Mewa Shoppe",
-    showcase: "Brand Experiences",
-    description:
-      "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
-    thumbnail: "./images/tms_logos.png",
-    media:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
-  },
-  {
-    id: 24,
-    name: "AM",
-    role: "Asset Mantra",
-    showcase: "Interactive Worlds",
-    description:
-      "Building immersive game environments that blur the line between reality and digital artistry.",
-    thumbnail: "./images/assetmantra.png",
-    media:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-  },
-  {
-    id: 25,
-    name: "Déborah",
-    role: "AI Artist",
-    showcase: "Robots building Mars",
-    description:
-      "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=600&h=400&fit=crop",
-  },
-  {
-    id: 26,
-    name: "John Martinez",
-    role: "3D Designer",
-    showcase: "Futuristic City Concepts",
-    description:
-      "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-  },
-  {
-    id: 27,
-    name: "Sarah Chen",
-    role: "Motion Designer",
-    showcase: "Abstract Animations",
-    description:
-      "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  },
-  {
-    id: 28,
-    name: "Alex Rivera",
-    role: "Digital Artist",
-    showcase: "Cyberpunk Portraits",
-    description:
-      "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-  },
-  {
-    id: 29,
-    name: "Maya Patel",
-    role: "Concept Artist",
-    showcase: "Fantasy Landscapes",
-    description:
-      "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-  },
-  {
-    id: 30,
-    name: "David Kim",
-    role: "Visual Effects Artist",
-    showcase: "Particle Simulations",
-    description:
-      "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
-  },
-  {
-    id: 31,
-    name: "Luna Rodriguez",
-    role: "Creative Director",
-    showcase: "Brand Experiences",
-    description:
-      "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
-  },
-  {
-    id: 32,
-    name: "Marcus Thompson",
-    role: "Game Designer",
-    showcase: "Interactive Worlds",
-    description:
-      "Building immersive game environments that blur the line between reality and digital artistry.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-  },
-];
 
 export default function CreativePartners() {
   const [selected, setSelected] = useState<Project>(projects[0]);
@@ -470,7 +104,7 @@ export default function CreativePartners() {
           Projects
         </h2>
         <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          "Crafted with passion, built with purpose."
+          'Crafted with passion, built with purpose.'
         </p>
       </div>
 
@@ -546,20 +180,33 @@ export default function CreativePartners() {
             <p className="text-blue-600 text-lg font-medium">{selected.role}</p>
           </div>
 
-          <div className="bg-gray-100 rounded-xl p-6 border border-gray-300">
-            <p className="text-gray-600 mb-2">Current Showcase:</p>
-            <p className="text-xl font-semibold text-gray-900">
-              {selected.showcase}
-            </p>
+          <div className="bg-gray-100 rounded-xl p-2 border border-gray-300">
+            <div className="flex flex-wrap gap-2">
+              {selected.techStack?.map((tech, index) => (
+                <span
+                  key={index}
+                  className="bg-white border border-gray-300 text-gray-800 text-sm px-3 py-1 rounded-lg shadow-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
 
           <p className="text-gray-600 text-lg leading-relaxed">
             {selected.description}
           </p>
 
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            View Portfolio
-          </button>
+          <a
+            href={selected.projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              View Portfolio
+            </button>
+          </a>
         </div>
 
         <div className="order-1 lg:order-2">
@@ -568,6 +215,8 @@ export default function CreativePartners() {
               <video
                 src={selected.media}
                 controls
+                autoPlay
+                loop
                 className="w-full rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
               />
             ) : (

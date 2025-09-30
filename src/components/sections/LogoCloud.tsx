@@ -6,16 +6,25 @@ export default function LogoCloud() {
       <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent">
         Skills
       </h2>
-      <div className="mx-auto grid w-full gap-6 px-2 grid-cols-3 lg:grid-cols-5 lg:w-4/5 ">
-        {brands.map((brand) => {
+      <div className="mx-auto grid w-full gap-6 px-2 grid-cols-3 lg:grid-cols-5 lg:w-4/5">
+        {brands.map((brand, index) => {
           const Icon = brand.icon;
+
+          // Hide the last item on mobile
+          const isLast = index === brands.length - 1;
+
           return (
             <div
               key={brand.id}
-              className="flex items-center justify-center rounded-3xl border bg-white/5 py-2 px-0"
+              className={`flex items-center justify-center rounded-3xl border bg-white/5 py-2 px-0 ${
+                isLast ? "hidden sm:flex" : ""
+              }`}
             >
               <Icon className="h-8 w-8" style={{ color: brand.color }} />
-              <span className="ml-2 text-sm">{brand.name}</span>
+              {/* Hide text on small screens */}
+              <span className="ml-2 text-sm hidden sm:inline">
+                {brand.name}
+              </span>
             </div>
           );
         })}

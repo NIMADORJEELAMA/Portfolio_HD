@@ -13,20 +13,14 @@ import Timeline from "@/components/Timeline";
 export default function HomePage() {
   return (
     <main className="relative min-h-screen bg-background text-foreground">
-      {/* <Navbar /> */}
       <HeroVideoSection />
-      {/* <Hero /> */}
 
       <LogoCloud />
-      {/* <MediaCardSection /> */}
-      {/* <MediaCardSectionFull />  */}
-      {/* <Timeline /> */}
 
       <div id="projects">
         <CreativePartners />
       </div>
 
-      {/* <FeatureGrid /> */}
       <Footer />
       <SectionHeader />
     </main>

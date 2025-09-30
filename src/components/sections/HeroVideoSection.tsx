@@ -1,21 +1,53 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Loader2, Menu, X } from "lucide-react";
+import { toast } from "sonner";
 
 export function HeroVideoSection() {
   const [open, setOpen] = useState(false); // Experience modal
   const [contactOpen, setContactOpen] = useState(false); // Contact modal
   const [mobileOpen, setMobileOpen] = useState(false); // Mobile nav
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_f0d0gb9", // from EmailJS dashboard
+        "template_22jqvoi", // from EmailJS dashboard
+        formRef.current,
+        "Nd58S-nIUI9qdIHYs" // from EmailJS account
+      )
+      .then(
+        () => {
+          // alert("✅ Message sent successfully!");a
+          toast.success("Message sent!", {
+            description: "Your message has been delivered successfully.",
+            duration: 3000,
+          });
+          setContactOpen(false);
+          setLoading(false);
+        },
+        (error) => {
+          alert("❌ Failed to send message: " + error.text);
+        }
+      );
+  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Video */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        src="/videos/hero.mp4"
+        src="/images/laptop_back.avif"
         autoPlay
         loop
         muted
@@ -213,9 +245,9 @@ export function HeroVideoSection() {
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="fixed left-1/2 top-[72px] z-50 w-[90%] max-w-md -translate-x-1/2 
-            rounded-2xl border border-white/20 
-            bg-gradient-to-b from-black/40 to-black/20 backdrop-blur-2xl 
-            p-6 text-white shadow-xl"
+          rounded-2xl border border-white/20 
+          bg-gradient-to-b from-black/40 to-black/20 backdrop-blur-2xl 
+          p-6 text-white shadow-xl"
           >
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold">Contact Me</h2>
@@ -228,24 +260,45 @@ export function HeroVideoSection() {
             </div>
 
             {/* Contact Form */}
-            <form className="flex flex-col gap-4">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="flex flex-col gap-4"
+            >
               <input
                 type="text"
+                name="user_name"
                 placeholder="Your Name"
                 className="rounded-lg bg-white/10 border border-white/20 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               />
               <input
                 type="email"
+                name="user_email"
                 placeholder="Your Email"
                 className="rounded-lg bg-white/10 border border-white/20 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               />
               <textarea
+                name="message"
                 rows={4}
                 placeholder="Your Message"
                 className="rounded-lg bg-white/10 border border-white/20 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               />
-              <Button className="rounded-full bg-blue-600 text-white hover:bg-blue-700">
-                Send Message
+              <Button
+                type="submit"
+                className="rounded-full bg-blue-600 text-white hover:bg-blue-700 flex items-center justify-center gap-2"
+                disabled={loading}
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="animate-spin h-5 w-5" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </Button>
             </form>
           </motion.div>
@@ -260,7 +313,10 @@ export function HeroVideoSection() {
           transition={{ duration: 0.8 }}
           className="text-4xl font-semibold sm:text-5xl md:text-6xl"
         >
-          Oakley design, <br /> Meta technology
+          <span className="block text-2xl sm:text-3xl md:text-4xl">
+            Nima Dorjee Lama
+          </span>
+          Full Stack Developer
         </motion.h1>
 
         <motion.p
@@ -269,7 +325,7 @@ export function HeroVideoSection() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="mt-4 max-w-xl text-lg text-gray-200"
         >
-          Fifty years of design meets the new era of tech with Oakley Meta HSTN.
+          Turning ideas into interactive web and mobile applications.
         </motion.p>
 
         <motion.div
@@ -282,7 +338,7 @@ export function HeroVideoSection() {
             size="lg"
             className="rounded-full bg-blue-600 text-white hover:bg-blue-700"
           >
-            Learn More
+            Resume
           </Button>
         </motion.div>
       </div>
