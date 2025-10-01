@@ -2,6 +2,11 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { projects } from "@/lib/constants";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 type Project = {
   id: number;
@@ -14,6 +19,7 @@ type Project = {
   isVideo?: boolean;
   techStack?: string[];
   projectLink?: string;
+  mediaList?: string[];
 };
 
 export default function CreativePartners() {
@@ -220,6 +226,48 @@ export default function CreativePartners() {
                 className="w-full rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
               />
             ) : (
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                loop
+                className="w-full rounded-2xl shadow-2xl"
+              >
+                {selected.mediaList?.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    {/* <img
+                      src={img}
+                      alt={`${selected.showcase}-${i}`}
+                      className="w-full rounded-2xl object-contain aspect-[4/3]"
+                    /> */}
+                    <img
+                      src={img}
+                      alt={`${selected.showcase}-${i}`}
+                      width={400}
+                      height={400}
+                      className="w-full rounded-2xl object-contain aspect-square"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            )}
+
+            {/* Overlay gradient on hover */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
+        </div>
+        {/* <div className="order-1 lg:order-2">
+          <div className="relative group">
+            {selected.isVideo ? (
+              <video
+                src={selected.media}
+                controls
+                autoPlay
+                loop
+                className="w-full rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+            ) : (
               <img
                 src={selected.media}
                 alt={selected.showcase}
@@ -228,7 +276,7 @@ export default function CreativePartners() {
             )}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

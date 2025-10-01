@@ -65,7 +65,15 @@ export const projects = [
       "Healthcare system with patient records, doctor rosters, prescriptions, lab results, billing, and task management Implemented Ag-Grid for tables, with Bootstrap, MUI, and SCSS for responsive UI.Managed state with Redux and built the web app using React + TypeScript.",
     thumbnail: "./images/ldc.png",
     media: "./videos/ldc_video.mp4",
-    isVideo: true,
+    isVideo: false,
+    mediaList: [
+      "./images/ldc1.png",
+      "./images/ldc2.png",
+      "./images/ldc3.png",
+      "./images/ldc4.png",
+      "./images/ldc5.png",
+      "./images/ldc6.png",
+    ],
     projectTitle: "LONDONDERMATOLOGYCLINIC",
     projectLink: "https://ldc.goldenbuzz.in",
     techStack: ["HTML", "SCSS", "React.Js", ".NET"],
@@ -79,6 +87,7 @@ export const projects = [
     media:
       "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
     isVideo: false,
+    mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
     projectTitle: "DENTALSOFTWARE",
     projectLink: "Link",
     techStack: ["HTML", "SCSS", "React.Js", ".NET"],
@@ -94,6 +103,7 @@ export const projects = [
     media: "./videos/helpsales.mp4",
     isVideo: true,
     projectTitle: "LOGIBOOK",
+    mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
     projectLink: "Link",
     techStack: [".NET", "HTML", "SCSS", "Angular"],
     description:
@@ -109,6 +119,7 @@ export const projects = [
       "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
     isVideo: false,
     projectTitle: "HLJ ERP",
+    mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
     projectLink: "Link",
     techStack: ["React Native", ".NET", "CSS", "JavaScript"],
     description:
@@ -121,8 +132,16 @@ export const projects = [
     showcase: "Fantasy Landscapes",
     thumbnail: "./images/hs.png",
     media: "./videos/helpsales_vid.mp4",
-    isVideo: true,
+    isVideo: false,
     projectTitle: "HELPSALESCRMAPP",
+    mediaList: [
+      "./images/hs1.jpg",
+      "./images/hs2.jpg",
+      "./images/hs3.jpg",
+      "./images/hs4.jpg",
+      "./images/hs5.jpg",
+      "./images/hs6.jpg",
+    ],
     projectLink:
       "https://play.google.com/store/apps/details?id=com.rebin.HelpSales&hl=en-us",
     techStack: ["React Native", ".NET"],
@@ -138,6 +157,7 @@ export const projects = [
     media:
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
     isVideo: false,
+    mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
     projectTitle: "Garments Mantra",
     projectLink:
       "https://play.google.com/store/apps/details?id=com.rebin.garmentsmantra&hl=en-us",
@@ -153,6 +173,7 @@ export const projects = [
     thumbnail: "./images/tms_logos.png",
     media: "./videos/mewashoppe_video.mp4",
     isVideo: true,
+    mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
     projectTitle: "THE MEWA SHOPPE",
     projectLink:
       "https://play.google.com/store/apps/details?id=com.themewashoppe&hl=en-us",
@@ -169,6 +190,7 @@ export const projects = [
     media:
       "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
     isVideo: false,
+    mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
     projectTitle: "ASSET MANTRA",
     projectLink:
       "https://play.google.com/store/apps/details?id=com.reb.assetmantra&hl=en-us",
@@ -186,277 +208,280 @@ export const projects = [
     media:
       "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=600&h=400&fit=crop",
     isVideo: false,
+    mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
     projectTitle: "Swastik Rice CRM App",
     projectLink: "Link",
     techStack: ["React Native", ".NET"],
     description:
       "Developed a CRM app to manage inventory, stock in/out, and sales orders, providing efficient tracking and streamlined business operations.",
   },
-  {
-    id: 10,
-    name: "John Martinez",
-    role: "3D Designer",
-    showcase: "Futuristic City Concepts",
-    description:
-      "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-  },
-  {
-    id: 11,
-    name: "Sarah Chen",
-    role: "Motion Designer",
-    showcase: "Abstract Animations",
-    description:
-      "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  },
-  {
-    id: 12,
-    name: "Alex Rivera",
-    role: "Digital Artist",
-    showcase: "Cyberpunk Portraits",
-    description:
-      "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-  },
-  {
-    id: 13,
-    name: "Maya Patel",
-    role: "Concept Artist",
-    showcase: "Fantasy Landscapes",
-    description:
-      "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-  },
-  {
-    id: 14,
-    name: "David Kim",
-    role: "Visual Effects Artist",
-    showcase: "Particle Simulations",
-    description:
-      "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
-  },
-  {
-    id: 15,
-    name: "Luna Rodriguez",
-    role: "Creative Director",
-    showcase: "Brand Experiences",
-    description:
-      "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
-  },
-  {
-    id: 16,
-    name: "Marcus Thompson",
-    role: "Game Designer",
-    showcase: "Interactive Worlds",
-    description:
-      "Building immersive game environments that blur the line between reality and digital artistry.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-  },
-  {
-    id: 17,
-    name: "LDC",
-    role: "London Dermatology Clinic",
-    showcase: "Robots building Mars",
-    description:
-      "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
-    thumbnail: "./images/ldc.png",
-    media: "./images/ldc.png",
-  },
-  {
-    id: 18,
-    name: "DS",
-    role: "Dental Software",
-    showcase: "Futuristic City Concepts",
-    description:
-      "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
-    thumbnail: "./images/dental.png",
-    media:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-  },
-  {
-    id: 19,
-    name: "Marshal",
-    role: "Logibook",
-    showcase: "Abstract Animations",
-    description:
-      "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
-    thumbnail: "./images/logibook.jpg",
-    media:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  },
-  {
-    id: 20,
-    name: "Hlj",
-    role: "HLJ ERP",
-    showcase: "Cyberpunk Portraits",
-    description:
-      "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
-    thumbnail: "./images/hlj_erp.png",
-    media:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-  },
-  {
-    id: 21,
-    name: "HS",
-    role: "Helpsales CRM",
-    showcase: "Fantasy Landscapes",
-    description:
-      "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
-    thumbnail: "./images/hs.png",
-    media:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-  },
-  {
-    id: 22,
-    name: "GM",
-    role: "Garments Mantra",
-    showcase: "Particle Simulations",
-    description:
-      "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
-    thumbnail: "./images/gm.png",
-    media:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
-  },
-  {
-    id: 23,
-    name: "TMS",
-    role: "The Mewa Shoppe",
-    showcase: "Brand Experiences",
-    description:
-      "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
-    thumbnail: "./images/tms_logos.png",
-    media:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
-  },
-  {
-    id: 24,
-    name: "AM",
-    role: "Asset Mantra",
-    showcase: "Interactive Worlds",
-    description:
-      "Building immersive game environments that blur the line between reality and digital artistry.",
-    thumbnail: "./images/assetmantra.png",
-    media:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-  },
-  {
-    id: 25,
-    name: "Déborah",
-    role: "AI Artist",
-    showcase: "Robots building Mars",
-    description:
-      "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=600&h=400&fit=crop",
-  },
-  {
-    id: 26,
-    name: "John Martinez",
-    role: "3D Designer",
-    showcase: "Futuristic City Concepts",
-    description:
-      "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-  },
-  {
-    id: 27,
-    name: "Sarah Chen",
-    role: "Motion Designer",
-    showcase: "Abstract Animations",
-    description:
-      "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-  },
-  {
-    id: 28,
-    name: "Alex Rivera",
-    role: "Digital Artist",
-    showcase: "Cyberpunk Portraits",
-    description:
-      "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-  },
-  {
-    id: 29,
-    name: "Maya Patel",
-    role: "Concept Artist",
-    showcase: "Fantasy Landscapes",
-    description:
-      "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
-  },
-  {
-    id: 30,
-    name: "David Kim",
-    role: "Visual Effects Artist",
-    showcase: "Particle Simulations",
-    description:
-      "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
-  },
-  {
-    id: 31,
-    name: "Luna Rodriguez",
-    role: "Creative Director",
-    showcase: "Brand Experiences",
-    description:
-      "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
-  },
-  {
-    id: 32,
-    name: "Marcus Thompson",
-    role: "Game Designer",
-    showcase: "Interactive Worlds",
-    description:
-      "Building immersive game environments that blur the line between reality and digital artistry.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=300&fit=crop",
-    media:
-      "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
-  },
+  // {
+  //   id: 10,
+  //   name: "John Martinez",
+  //   role: "3D Designer",
+  //   showcase: "Futuristic City Concepts",
+  //   mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
+  //   description:
+  //     "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 11,
+  //   name: "Sarah Chen",
+  //   role: "Motion Designer",
+  //   showcase: "Abstract Animations",
+  //   mediaList: ["./images/ldc.png", "./images/dental.png", "./images/hs.png"],
+  //   description:
+  //     "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 12,
+  //   name: "Alex Rivera",
+  //   role: "Digital Artist",
+  //   showcase: "Cyberpunk Portraits",
+  //   description:
+  //     "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 13,
+  //   name: "Maya Patel",
+  //   role: "Concept Artist",
+  //   showcase: "Fantasy Landscapes",
+  //   description:
+  //     "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 14,
+  //   name: "David Kim",
+  //   role: "Visual Effects Artist",
+  //   showcase: "Particle Simulations",
+  //   description:
+  //     "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 15,
+  //   name: "Luna Rodriguez",
+  //   role: "Creative Director",
+  //   showcase: "Brand Experiences",
+  //   description:
+  //     "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 16,
+  //   name: "Marcus Thompson",
+  //   role: "Game Designer",
+  //   showcase: "Interactive Worlds",
+  //   description:
+  //     "Building immersive game environments that blur the line between reality and digital artistry.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 17,
+  //   name: "LDC",
+  //   role: "London Dermatology Clinic",
+  //   showcase: "Robots building Mars",
+  //   description:
+  //     "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
+  //   thumbnail: "./images/ldc.png",
+  //   media: "./images/ldc.png",
+  // },
+  // {
+  //   id: 18,
+  //   name: "DS",
+  //   role: "Dental Software",
+  //   showcase: "Futuristic City Concepts",
+  //   description:
+  //     "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
+  //   thumbnail: "./images/dental.png",
+  //   media:
+  //     "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 19,
+  //   name: "Marshal",
+  //   role: "Logibook",
+  //   showcase: "Abstract Animations",
+  //   description:
+  //     "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
+  //   thumbnail: "./images/logibook.jpg",
+  //   media:
+  //     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 20,
+  //   name: "Hlj",
+  //   role: "HLJ ERP",
+  //   showcase: "Cyberpunk Portraits",
+  //   description:
+  //     "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
+  //   thumbnail: "./images/hlj_erp.png",
+  //   media:
+  //     "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 21,
+  //   name: "HS",
+  //   role: "Helpsales CRM",
+  //   showcase: "Fantasy Landscapes",
+  //   description:
+  //     "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
+  //   thumbnail: "./images/hs.png",
+  //   media:
+  //     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 22,
+  //   name: "GM",
+  //   role: "Garments Mantra",
+  //   showcase: "Particle Simulations",
+  //   description:
+  //     "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
+  //   thumbnail: "./images/gm.png",
+  //   media:
+  //     "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 23,
+  //   name: "TMS",
+  //   role: "The Mewa Shoppe",
+  //   showcase: "Brand Experiences",
+  //   description:
+  //     "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
+  //   thumbnail: "./images/tms_logos.png",
+  //   media:
+  //     "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 24,
+  //   name: "AM",
+  //   role: "Asset Mantra",
+  //   showcase: "Interactive Worlds",
+  //   description:
+  //     "Building immersive game environments that blur the line between reality and digital artistry.",
+  //   thumbnail: "./images/assetmantra.png",
+  //   media:
+  //     "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 25,
+  //   name: "Déborah",
+  //   role: "AI Artist",
+  //   showcase: "Robots building Mars",
+  //   description:
+  //     "I use Kling AI every day. It's amazing to see the almost daily progress it makes.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 26,
+  //   name: "John Martinez",
+  //   role: "3D Designer",
+  //   showcase: "Futuristic City Concepts",
+  //   description:
+  //     "Exploring new AI-assisted workflows for architectural visualization and urban planning concepts.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 27,
+  //   name: "Sarah Chen",
+  //   role: "Motion Designer",
+  //   showcase: "Abstract Animations",
+  //   description:
+  //     "Creating mesmerizing visual experiences through AI-powered motion graphics and dynamic compositions.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 28,
+  //   name: "Alex Rivera",
+  //   role: "Digital Artist",
+  //   showcase: "Cyberpunk Portraits",
+  //   description:
+  //     "Blending traditional art techniques with cutting-edge AI tools to create stunning character designs.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 29,
+  //   name: "Maya Patel",
+  //   role: "Concept Artist",
+  //   showcase: "Fantasy Landscapes",
+  //   description:
+  //     "Crafting immersive worlds and environments that push the boundaries of imagination and creativity.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 30,
+  //   name: "David Kim",
+  //   role: "Visual Effects Artist",
+  //   showcase: "Particle Simulations",
+  //   description:
+  //     "Specializing in complex particle systems and dynamic simulations for film and interactive media.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 31,
+  //   name: "Luna Rodriguez",
+  //   role: "Creative Director",
+  //   showcase: "Brand Experiences",
+  //   description:
+  //     "Designing innovative brand experiences that combine storytelling with cutting-edge visual technology.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?w=600&h=400&fit=crop",
+  // },
+  // {
+  //   id: 32,
+  //   name: "Marcus Thompson",
+  //   role: "Game Designer",
+  //   showcase: "Interactive Worlds",
+  //   description:
+  //     "Building immersive game environments that blur the line between reality and digital artistry.",
+  //   thumbnail:
+  //     "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=300&fit=crop",
+  //   media:
+  //     "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop",
+  // },
 ];

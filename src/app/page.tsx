@@ -22,7 +22,7 @@ export default function HomePage() {
       </div>
 
       <Footer />
-      <SectionHeader />
+      {/* <SectionHeader /> */}
     </main>
   );
 }
