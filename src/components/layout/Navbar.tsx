@@ -15,7 +15,7 @@ export function Navbar() {
           <div className="size-8 rounded-xl bg-gradient-to-tr from-fuchsia-500 via-rose-500 to-amber-400 p-[2px]">
             <div className="h-full w-full rounded-[10px] bg-white/90 dark:bg-zinc-900/90" />
           </div>
-          <span className="text-lg">FlowTime</span>
+          <span className="text-lg">Portfolio</span>
         </div>
 
         {/* Nav Links */}

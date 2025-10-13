@@ -61,7 +61,7 @@ export function HeroVideoSection() {
       <nav className="fixed top-0 left-0 z-20 w-full backdrop-blur-md bg-black/30">
         <div className="mx-auto flex w-full items-center justify-between px-6 py-4 lg:w-4/5">
           {/* Logo */}
-          <div className="font-bold">FlowTime</div>
+          <div className="font-bold">Portfolio</div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
